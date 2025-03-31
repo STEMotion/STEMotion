@@ -4,7 +4,6 @@
 
 #ifndef METRICS_H
 #define METRICS_H
-#include "../utils/numsize.h"
 
 /*
  * Metrics in STEMotion is represented internally as MKS.

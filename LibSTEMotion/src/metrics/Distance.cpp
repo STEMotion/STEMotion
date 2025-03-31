@@ -2,7 +2,7 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#include "Distance.h"
+#include <LibSTEMotion/metrics/Distance.h>
 
 #include <utility>
 
@@ -26,19 +26,6 @@ namespace STEMotion {
                 return distance * 3.2808399;
             default:
                 return -1;
-        }
-    }
-
-    std::string Distance::unit() const {
-        switch (metric) {
-            case MKS:
-                return "m";
-            case CGS:
-                return "cm";
-            case FPS:
-                return "ft";
-            default:
-                return "";
         }
     }
 

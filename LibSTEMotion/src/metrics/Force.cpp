@@ -2,7 +2,7 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#include "Force.h"
+#include <LibSTEMotion/metrics/Force.h>
 
 #include <utility>
 
@@ -21,24 +21,11 @@ namespace STEMotion {
             case MKS:
                 return force;
             case CGS:
-                return force / 10e-5;
+                return force / 1e-5;
             case FPS:
                 return force / 0.1382549544;
             default:
                 return -1;
-        }
-    }
-
-    std::string Force::unit() const {
-        switch (metric) {
-            case MKS:
-                return "N";
-            case CGS:
-                return "dyn";
-            case FPS:
-                return "lbf";
-            default:
-                return "";
         }
     }
 
@@ -47,7 +34,7 @@ namespace STEMotion {
             case MKS:
                 return force;
             case CGS:
-                return force * 10e-5;
+                return force * 1e-5;
             case FPS:
                 return force * 0.1382549544;
             default:

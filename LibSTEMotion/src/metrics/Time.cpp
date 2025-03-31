@@ -2,16 +2,16 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#include "Time.h"
+#include <LibSTEMotion/metrics/Time.h>
 
 namespace STEMotion {
     Time::Time(f64 time, Unit unit) {
-        this->time = time * unit;
+        this->time = time * static_cast<float>(unit);
         this->t_unit = unit;
     }
 
     f64 Time::display() const {
-        return time / t_unit;
+        return time / static_cast<float>(t_unit);
     }
 
     std::string Time::unit() const {

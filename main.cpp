@@ -3,14 +3,7 @@
 
 #include "gui/MainWindow.h"
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main(int argc, char *argv[]) {
     auto app = Gtk::Application::create("org.stemotion");
-    return app->make_window_and_run<STEMotion::MainWindow>(argc, argv);
+    return app->make_window_and_run<STEMotion::MainWindow>(argc, argv, *app);
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.

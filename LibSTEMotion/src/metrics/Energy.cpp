@@ -2,8 +2,7 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#include "Energy.h"
-
+#include <LibSTEMotion/metrics/Energy.h>
 #include <utility>
 
 namespace STEMotion {
@@ -21,7 +20,7 @@ namespace STEMotion {
             case MKS:
                 return energy;
             case CGS:
-                return energy / 10e-7;
+                return energy / 1e-7;
             case FPS:
                 return energy / 1.3558179483;
             default:
@@ -34,24 +33,11 @@ namespace STEMotion {
             case MKS:
                 return energy;
             case CGS:
-                return energy * 10e-7;
+                return energy * 1e-7;
             case FPS:
                 return energy * 1.3558179483;
             default:
                 return -1;
-        }
-    }
-
-    std::string Energy::unit() const {
-        switch (metric) {
-            case MKS:
-                return "J";
-            case CGS:
-                return "erg";
-            case FPS:
-                return "ft-pound";
-            default:
-                return "";
         }
     }
 } // STEMotion

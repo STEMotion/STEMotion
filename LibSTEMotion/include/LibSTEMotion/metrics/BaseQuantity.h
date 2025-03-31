@@ -8,6 +8,7 @@
 #include <string>
 #include <utility>
 
+#include "../utils/numsize.h"
 #include "metrics.h"
 
 namespace STEMotion {
@@ -20,6 +21,8 @@ namespace STEMotion {
         virtual void to_metric(Metric metric) = 0;
         [[nodiscard]] virtual f64 display() const = 0;
         [[nodiscard]] virtual std::string unit() const = 0;
+        [[nodiscard]] std::string get_name() const { return name; }
+        [[nodiscard]] virtual const char** get_units() = 0;
     };
 }
 

@@ -7,11 +7,18 @@
 
 #include <gtkmm.h>
 
+#include "SimulationWindow.h"
+
 namespace STEMotion {
 
-class MainWindow : public Gtk::Window {
+class MainWindow final : public Gtk::Window {
 public:
-    MainWindow();
+    explicit MainWindow(Gtk::Application &app);
+private:
+    Gtk::Application &app;
+    Gtk::Box box;
+    Gtk::Label name;
+    Gtk::Button launch_simulation;
 };
 
 } // STEMotion
