@@ -29,6 +29,22 @@ namespace STEMotion {
         }
     }
 
+    Metric Force::from_unit_string(const char *unit) {
+        if (strcmp(unit, "N") == 0) {
+            return MKS;
+        }
+
+        if (strcmp(unit, "dyn") == 0) {
+            return CGS;
+        }
+
+        if (strcmp(unit, "lbf") == 0) {
+            return FPS;
+        }
+
+        return InvalidMetric;
+    }
+
     f64 Force::to_mks(f64 force, Metric metric) {
         switch (metric) {
             case MKS:

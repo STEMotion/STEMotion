@@ -29,6 +29,22 @@ namespace STEMotion {
         }
     }
 
+    [[nodiscard]] Metric Distance::from_unit_string(const char *unit) {
+        if (strcmp("m", unit) == 0) {
+            return MKS;
+        }
+
+        if (strcmp("cm", unit) == 0) {
+            return CGS;
+        }
+
+        if (strcmp("ft", unit) == 0) {
+            return FPS;
+        }
+
+        return InvalidMetric;
+    }
+
     f64 Distance::to_mks(f64 distance, Metric metric) {
         switch (metric) {
             case MKS:

@@ -31,6 +31,22 @@ namespace STEMotion {
         }
     }
 
+    Metric Velocity::from_unit_string(const char *unit) {
+        if (strcmp(unit, "m/s") == 0) {
+            return MKS;
+        }
+
+        if (strcmp(unit, "cm/s") == 0) {
+            return CGS;
+        }
+
+        if (strcmp(unit, "ft/s") == 0) {
+            return FPS;
+        }
+
+        return InvalidMetric;
+    }
+
     f64 Velocity::to_mks(f64 velocity, Metric metric) {
         switch (metric) {
             case MKS:

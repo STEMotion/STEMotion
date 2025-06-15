@@ -31,4 +31,9 @@ add_library(
     src/renderer/DrawQueue.cpp
     src/metrics/Mass.cpp
     include/LibSTEMotion/metrics/Mass.h
+    src/metrics/Angle.cpp
+    include/LibSTEMotion/metrics/Angle.h
+    src/simulation/SimulationOutput.cpp
+    include/LibSTEMotion/SimulationOutput.h
+        include/LibSTEMotion/renderer/objects/Object.h
 )

@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR})
 
 find_package(PkgConfig)
-find_package(OpenGL 3.3 REQUIRED)
 find_package(epoxy REQUIRED)
 
 pkg_check_modules(GTKMM gtkmm-4.0)
@@ -27,14 +26,6 @@ endif()
 add_executable(STEMotion main.cpp
     gui/MainWindow.cpp
     gui/MainWindow.h
-    renderer/objects/Circle.cpp
-    renderer/objects/Circle.h
-    renderer/objects/Rectangle.cpp
-    renderer/objects/Rectangle.h
-    renderer/objects/Triangle.cpp
-    renderer/objects/Triangle.h
-    renderer/objects/Object.cpp
-    renderer/objects/Object.h
     gui/SimulationWindow.cpp
     gui/SimulationWindow.h
     gui/simulation_window/SimulationView.cpp
@@ -53,4 +44,4 @@ add_executable(STEMotion main.cpp
     ${PLUGIN_LOADER}
 )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES} ${epoxy_LIBRARIES} LibSTEMotion OpenGL)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES} ${epoxy_LIBRARIES} LibSTEMotion)

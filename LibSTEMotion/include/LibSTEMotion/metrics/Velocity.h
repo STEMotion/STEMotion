@@ -15,17 +15,19 @@ class Velocity final : public BaseQuantity {
     f64 velocity;
     Metric metric;
 
-    const char *units[3] = { "m/s", "cm/s", "ft/s" };
+    const char *units[4] = { "m/s", "cm/s", "ft/s", "Invalid Metric"  };
 public:
     Velocity(std::string name, f64 velocity, Metric metric);
     void to_metric(Metric metric) override;
     [[nodiscard]] f64 display() const override;
-    [[nodiscard]] std::string unit() const override {
+    [[nodiscard]] const char* unit() const override {
         return units[metric];
     }
     [[nodiscard]] const char** get_units() override {
         return units;
     }
+
+    [[nodiscard]] Metric from_unit_string(const char *unit) override;
 
 private:
     static f64 to_mks(f64 velocity, Metric metric);

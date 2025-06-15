@@ -4,10 +4,14 @@
 
 #include <LibSTEMotion/renderer/DrawQueue.h>
 
-DrawQueue* DrawQueue_Create() {
-    return nullptr;
-}
+namespace STEMotion {
+    void DrawQueue::enqueue_command(const Object command) {
+        draw_queue.push(command);
+    }
 
-void DrawQueue_Destroy(DrawQueue *queue) {
-
+    Object DrawQueue::pop_command() {
+        const Object command = draw_queue.front();
+        draw_queue.pop();
+        return command;
+    }
 }

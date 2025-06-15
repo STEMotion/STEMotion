@@ -15,6 +15,22 @@ namespace STEMotion {
         this->metric = metric;
     }
 
+    Metric Energy::from_unit_string(const char *unit) {
+        if (strcmp("J", unit) == 0) {
+            return MKS;
+        }
+
+        if (strcmp("erg", unit) == 0) {
+            return CGS;
+        }
+
+        if (strcmp("ft-pound", unit) == 0) {
+            return FPS;
+        }
+
+        return InvalidMetric;
+    }
+
     f64 Energy::to_mks(f64 energy, Metric metric) {
         switch (metric) {
             case MKS:

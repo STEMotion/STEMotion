@@ -10,22 +10,33 @@
 
 namespace STEMotion {
 
-enum Unit {
+enum TimeUnit {
     Day = 86400,
     Hour = 3600,
     Minute = 60,
     Second = 1,
+    InvalidTimeUnit = -1,
 };
 
 class Time {
     // time is represented internally as seconds
     f64 time;
-    Unit t_unit;
+    TimeUnit t_unit;
+
+    const char *units[5] = { "d", "h", "min", "s", "Invalid unit" };
 
 public:
-    Time(f64 time, Unit unit);
+    Time(f64 time, TimeUnit unit);
     [[nodiscard]] f64 display() const;
-    [[nodiscard]] std::string unit() const;
+    [[nodiscard]] static TimeUnit from_string(const char *);
+
+    [[nodiscard]] const char* unit() const {
+        return units[t_unit];
+    }
+
+    [[nodiscard]] const char **get_units() {
+        return units;
+    }
 };
 
 }

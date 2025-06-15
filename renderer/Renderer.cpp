@@ -8,7 +8,7 @@
 #include "Renderer.h"
 
 namespace STEMotion {
-    void render_draw_queue(DrawQueue *draw_queue, const f64 time) {
+    void render_draw_queue(DrawQueue &draw_queue, const f64 time) {
         auto r = 1.0f;
         auto g = std::cos(time);
         auto b = std::sin(time);

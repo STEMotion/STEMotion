@@ -5,7 +5,7 @@
 #ifndef PLUGIN_H
 #define PLUGIN_H
 
-#define DEFINE_PLUGIN(name, init, simulator) \
+#define DEFINE_PLUGIN(name, init, simulator, destructor) \
     const char *STEMOTION_PLUGIN_NAME = #name; \
     \
     void STEMOTION_PLUGIN_INIT(SimulationParams *simulation_params) { \
@@ -13,6 +13,9 @@
     } \
     void STEMOTION_PLUGIN_SIMULATOR(SimulationParams *simulation_params, DrawQueue *draw_queue) { \
         #simulator(simulation_params, draw_queue); \
+    } \
+    void STEMOTION_PLUGIN_DESTRUCTOR() { \
+        #destructor(); \
     }
 
 #endif //PLUGIN_H

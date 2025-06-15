@@ -18,7 +18,8 @@ namespace STEMotion {
     enum Metric {
         MKS,
         CGS,
-        FPS
+        FPS,
+        InvalidMetric
     };
 }
 

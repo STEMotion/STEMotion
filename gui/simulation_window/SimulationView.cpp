@@ -14,7 +14,7 @@ namespace STEMotion {
     }
 
     bool SimulationView::on_render(const Glib::RefPtr<Gdk::GLContext> &gl_context) {
-        auto time = get_frame_clock()->get_frame_time() / 1e6;
+        const auto time = get_frame_clock()->get_frame_time() / 1e6;
         if (lastTime == 0) {
             lastTime = time;
         }
@@ -22,11 +22,19 @@ namespace STEMotion {
             lastTime = time;
             has_params_been_updated = false;
         }
-        auto deltaTime = time - lastTime;
+        const auto delta_time = time - lastTime;
         lastTime = time;
 
-        DrawQueue *queue = plugin.run(deltaTime);
-        render_draw_queue(queue, time);
+        auto [draw_queue, simulation_output] = plugin.run(delta_time);
+        draw_queue.enqueue_command({
+            .kind = ObjectKindCircle,
+            .x0 = 0,
+            .y0 = 0,
+            .circle = {
+                .radius = 5
+            }
+        });
+        render_draw_queue(draw_queue, time);
 
         return true;
     }
@@ -34,7 +42,7 @@ namespace STEMotion {
     void SimulationView::on_realize() {
         GLArea::on_realize();
 
-        auto clock = get_frame_clock();
+        const auto clock = get_frame_clock();
         clock->signal_update().connect([this] {
            queue_render();
         });

@@ -5,10 +5,23 @@
 #ifndef DRAWQUEUE_H
 #define DRAWQUEUE_H
 
-// TODO: implement the DrawQueue
-typedef void DrawQueue;
+#include <queue>
 
-DrawQueue *DrawQueue_Create();
-void DrawQueue_Destroy(DrawQueue *queue);
+#include "objects/Object.h"
+
+namespace STEMotion {
+    class DrawQueue {
+        std::queue<Object> draw_queue;
+
+    public:
+        DrawQueue() = default;
+        void enqueue_command(Object command);
+        [[nodiscard]] size_t size() const {
+            return draw_queue.size();
+        }
+        [[nodiscard]] Object pop_command();
+        ~DrawQueue() = default;
+    };
+}
 
 #endif //DRAWQUEUE_H

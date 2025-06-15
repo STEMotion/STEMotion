@@ -16,16 +16,19 @@
 namespace STEMotion {
     SimulationPlugin::SimulationPlugin(std::string &path) {
         // TODO: remove after proper mechanism is implemented
-        params.params.insert({ "d", std::make_unique<Distance>("d", 69.4, MKS) });
-        params.params.insert({ "m1", std::make_unique<Mass>("m1", 69.4, FPS) });
-        params.params.insert({ "m2", std::make_unique<Mass>("m2", 69.4, MKS) });
-        params.params.insert({ "f", std::make_unique<Force>("f", 69.4, MKS) });
-        params.params.insert({ "v", std::make_unique<Velocity>("v", 69.4, CGS) });
-        params.params.insert({ "w", std::make_unique<Energy>("d", 69.4, FPS) });
+        params.set_metric_param("d", std::make_unique<Distance>("d", 69.4, MKS).release());
+        params.set_metric_param("m1", std::make_unique<Mass>("m1", 69.4, FPS).release());
+        params.set_metric_param("m2", std::make_unique<Mass>("m2", 69.4, MKS).release());
+        params.set_metric_param("f", std::make_unique<Force>("f", 69.4, MKS).release());
+        params.set_metric_param("v", std::make_unique<Velocity>("v", 69.4, CGS).release());
+        params.set_metric_param("w", std::make_unique<Energy>("d", 69.4, FPS).release());
     }
 
-    DrawQueue* SimulationPlugin::run(f64 deltaTime) {
-        return {};
+    SimulationResult SimulationPlugin::run(f64 deltaTime) {
+        return {
+            .draw_queue = DrawQueue(),
+            .output = SimulationOutput(),
+        };
     }
 
     SimulationParams& SimulationPlugin::get_params() {
@@ -33,5 +36,6 @@ namespace STEMotion {
     }
 
     SimulationPlugin::~SimulationPlugin() {
+        // TODO: call plugin's destructor
     }
 } // STEMotion

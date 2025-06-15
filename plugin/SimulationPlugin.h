@@ -10,7 +10,14 @@
 #include <LibSTEMotion/SimulationParams.h>
 #include <LibSTEMotion/renderer/DrawQueue.h>
 
+#include "LibSTEMotion/SimulationOutput.h"
+
 namespace STEMotion {
+
+struct SimulationResult {
+    DrawQueue draw_queue;
+    SimulationOutput output;
+};
 
 // TODO: implement this properly
 class SimulationPlugin {
@@ -18,7 +25,7 @@ class SimulationPlugin {
 
 public:
     explicit SimulationPlugin(std::string &path);
-    DrawQueue* run(f64 deltaTime);
+    SimulationResult run(f64 deltaTime);
     SimulationParams& get_params();
     ~SimulationPlugin();
 };

@@ -11,7 +11,7 @@
 namespace STEMotion {
 
 // TODO: implement this properly
-void render_draw_queue(DrawQueue *draw_queue, const f64 time);
+void render_draw_queue(DrawQueue &draw_queue, const f64 time);
 
 } // STEMotion
 

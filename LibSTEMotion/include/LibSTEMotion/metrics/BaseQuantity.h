@@ -20,9 +20,10 @@ namespace STEMotion {
 
         virtual void to_metric(Metric metric) = 0;
         [[nodiscard]] virtual f64 display() const = 0;
-        [[nodiscard]] virtual std::string unit() const = 0;
-        [[nodiscard]] std::string get_name() const { return name; }
+        [[nodiscard]] virtual const char* unit() const = 0;
+        [[nodiscard]] const char* get_name() const { return name.c_str(); }
         [[nodiscard]] virtual const char** get_units() = 0;
+        [[nodiscard]] virtual Metric from_unit_string(const char *unit) = 0;
     };
 }
 
