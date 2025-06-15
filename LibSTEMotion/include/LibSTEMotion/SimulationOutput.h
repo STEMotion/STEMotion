@@ -13,4 +13,4 @@ namespace STEMotion {
 }
 
 
-#endif //SIMULATIONOUTPUT_H
+#endif // SIMULATIONOUTPUT_H

@@ -10,9 +10,9 @@
 
 namespace STEMotion {
 
-// TODO: implement this properly
-void render_draw_queue(DrawQueue &draw_queue, const f64 time);
+    // TODO: implement this properly
+    void render_draw_queue(DrawQueue &draw_queue, const f64 time);
 
-} // STEMotion
+} // namespace STEMotion
 
-#endif //RENDERER_H
+#endif // RENDERER_H

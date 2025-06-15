@@ -19,8 +19,9 @@ namespace STEMotion {
         set_valign(Gtk::Align::START);
 
         // TODO: process the params and create necessary fields.
-        for (auto& param: params.get_metric_params_list()) {
-            std::cout << "Param: " << param.first << " Value: " << param.second->display() << " " << param.second->unit();
+        for (auto &param: params.get_metric_params_list()) {
+            std::cout << "Param: " << param.first << " Value: " << param.second->display() << " "
+                      << param.second->unit();
             const auto units = param.second->get_units();
             std::cout << " Units: " << units[0] << ", " << units[1] << ", " << units[2] << std::endl;
         }
@@ -28,4 +29,4 @@ namespace STEMotion {
         label.set_text("Parameters");
         append(label);
     }
-} // STEMotion
+} // namespace STEMotion

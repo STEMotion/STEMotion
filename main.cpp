@@ -1,5 +1,5 @@
-#include <iostream>
 #include <gtkmm.h>
+#include <iostream>
 
 #include "gui/MainWindow.h"
 

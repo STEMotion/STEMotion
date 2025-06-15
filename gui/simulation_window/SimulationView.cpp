@@ -7,8 +7,7 @@
 #include "../../renderer/Renderer.h"
 
 namespace STEMotion {
-    SimulationView::SimulationView(SimulationPlugin &simulation_plugin)
-        : plugin(simulation_plugin) {
+    SimulationView::SimulationView(SimulationPlugin &simulation_plugin) : plugin(simulation_plugin) {
         set_auto_render(false);
         set_size_request(512, 615);
     }
@@ -26,14 +25,7 @@ namespace STEMotion {
         lastTime = time;
 
         auto [draw_queue, simulation_output] = plugin.run(delta_time);
-        draw_queue.enqueue_command({
-            .kind = ObjectKindCircle,
-            .x0 = 0,
-            .y0 = 0,
-            .circle = {
-                .radius = 5
-            }
-        });
+        draw_queue.enqueue_command({.kind = ObjectKindCircle, .x0 = 0, .y0 = 0, .circle = {.radius = 5}});
         render_draw_queue(draw_queue, time);
 
         return true;
@@ -43,9 +35,7 @@ namespace STEMotion {
         GLArea::on_realize();
 
         const auto clock = get_frame_clock();
-        clock->signal_update().connect([this] {
-           queue_render();
-        });
+        clock->signal_update().connect([this] { queue_render(); });
         clock->begin_updating();
     }
-}
+} // namespace STEMotion

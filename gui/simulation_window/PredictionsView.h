@@ -9,14 +9,14 @@
 
 namespace STEMotion {
 
-class PredictionsView final : public Gtk::Box {
-public:
-    PredictionsView();
+    class PredictionsView final : public Gtk::Box {
+    public:
+        PredictionsView();
 
-private:
-    Gtk::Label label;
-};
+    private:
+        Gtk::Label label;
+    };
 
-} // STEMotion
+} // namespace STEMotion
 
-#endif //PREDICTIONSVIEW_H
+#endif // PREDICTIONSVIEW_H

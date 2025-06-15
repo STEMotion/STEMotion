@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#include <epoxy/gl.h>
 #include <cmath>
+#include <epoxy/gl.h>
 
 #include "Renderer.h"
 
@@ -18,4 +18,4 @@ namespace STEMotion {
 
         glFlush();
     }
-} // STEMotion
+} // namespace STEMotion

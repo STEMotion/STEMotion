@@ -14,22 +14,22 @@
 
 namespace STEMotion {
 
-struct SimulationResult {
-    DrawQueue draw_queue;
-    SimulationOutput output;
-};
+    struct SimulationResult {
+        DrawQueue draw_queue;
+        SimulationOutput output;
+    };
 
-// TODO: implement this properly
-class SimulationPlugin {
-    SimulationParams params;
+    // TODO: implement this properly
+    class SimulationPlugin {
+        SimulationParams params;
 
-public:
-    explicit SimulationPlugin(std::string &path);
-    SimulationResult run(f64 deltaTime);
-    SimulationParams& get_params();
-    ~SimulationPlugin();
-};
+    public:
+        explicit SimulationPlugin(std::string &path);
+        SimulationResult run(f64 deltaTime);
+        SimulationParams &get_params();
+        ~SimulationPlugin();
+    };
 
-} // STEMotion
+} // namespace STEMotion
 
-#endif //SIMULATIONPLUGIN_H
+#endif // SIMULATIONPLUGIN_H

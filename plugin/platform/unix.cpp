@@ -4,6 +4,4 @@
 
 #include "PlatformInterface.h"
 
-STEMotionPlugin STEMotion_LoadPlugin(const char *path) {
-    return {};
-}
+STEMotionPlugin STEMotion_LoadPlugin(const char *path) { return {}; }

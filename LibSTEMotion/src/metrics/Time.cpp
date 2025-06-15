@@ -10,9 +10,7 @@ namespace STEMotion {
         this->t_unit = unit;
     }
 
-    f64 Time::display() const {
-        return time / static_cast<float>(t_unit);
-    }
+    f64 Time::display() const { return time / static_cast<float>(t_unit); }
 
     TimeUnit Time::from_string(const char *unit) {
         if (strcmp(unit, "d") == 0) {
@@ -33,4 +31,4 @@ namespace STEMotion {
 
         return InvalidTimeUnit;
     }
-}
+} // namespace STEMotion

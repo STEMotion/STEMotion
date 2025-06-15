@@ -11,28 +11,26 @@
 
 namespace STEMotion {
 
-class Energy final : public BaseQuantity {
-    f64 energy;
-    Metric metric;
+    class Energy final : public BaseQuantity {
+        f64 energy;
+        Metric metric;
 
-    const char *units[4] = { "J", "erg", "ft-pound", "Invalid Metric" };
-public:
-    Energy(std::string name, f64 energy, Metric metric);
-    void to_metric(Metric metric) override;
-    [[nodiscard]] f64 display() const override;
-    [[nodiscard]] const char* unit() const override {
-        return units[metric];
-    }
+        const char *units[4] = {"J", "erg", "ft-pound", "Invalid Metric"};
 
-    [[nodiscard]] const char** get_units() override {
-        return units;
-    }
+    public:
+        Energy(std::string name, f64 energy, Metric metric);
+        void to_metric(Metric metric) override;
+        [[nodiscard]] f64 display() const override;
+        [[nodiscard]] const char *unit() const override { return units[metric]; }
 
-    [[nodiscard]] Metric from_unit_string(const char *unit) override;
-private:
-    static f64 to_mks(f64 energy, Metric metric);
-};
+        [[nodiscard]] const char **get_units() override { return units; }
 
-} // STEMotion
+        [[nodiscard]] Metric from_unit_string(const char *unit) override;
 
-#endif //ENERGY_H
+    private:
+        static f64 to_mks(f64 energy, Metric metric);
+    };
+
+} // namespace STEMotion
+
+#endif // ENERGY_H

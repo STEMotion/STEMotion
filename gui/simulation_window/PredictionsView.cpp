@@ -16,4 +16,4 @@ namespace STEMotion {
         label.set_text("Predictions");
         append(label);
     }
-} // STEMotion
+} // namespace STEMotion

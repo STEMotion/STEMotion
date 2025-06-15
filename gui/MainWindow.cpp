@@ -45,4 +45,4 @@ namespace STEMotion {
 
         set_child(box);
     }
-} // STEMotion
+} // namespace STEMotion

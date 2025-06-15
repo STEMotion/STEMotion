@@ -16,4 +16,4 @@ typedef uint64_t u64;
 typedef float f32;
 typedef double f64;
 
-#endif //NUMSIZE_H
+#endif // NUMSIZE_H

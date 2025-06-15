@@ -15,12 +15,7 @@
 #define GRAVITY 9.81
 
 namespace STEMotion {
-    enum Metric {
-        MKS,
-        CGS,
-        FPS,
-        InvalidMetric
-    };
+    enum Metric { MKS, CGS, FPS, InvalidMetric };
 }
 
-#endif //METRICS_H
+#endif // METRICS_H

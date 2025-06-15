@@ -5,14 +5,12 @@
 #include <LibSTEMotion/metrics/Mass.h>
 
 namespace STEMotion {
-    Mass::Mass(std::string name, f64 mass, Metric metric): BaseQuantity(std::move(name)) {
+    Mass::Mass(std::string name, f64 mass, Metric metric) : BaseQuantity(std::move(name)) {
         this->mass = to_mks(mass, metric);
         this->metric = metric;
     }
 
-    void Mass::to_metric(Metric metric) {
-        this->metric = metric;
-    }
+    void Mass::to_metric(Metric metric) { this->metric = metric; }
 
     f64 Mass::display() const {
         switch (metric) {
@@ -55,4 +53,4 @@ namespace STEMotion {
                 return -1;
         }
     }
-} // STEMotion
+} // namespace STEMotion

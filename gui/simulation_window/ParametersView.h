@@ -11,15 +11,15 @@
 
 namespace STEMotion {
 
-class ParametersView final : public Gtk::Box {
-public:
-    explicit ParametersView(SimulationParams &params);
+    class ParametersView final : public Gtk::Box {
+    public:
+        explicit ParametersView(SimulationParams &params);
 
-private:
-    SimulationParams &params;
-    Gtk::Label label;
-};
+    private:
+        SimulationParams &params;
+        Gtk::Label label;
+    };
 
-} // STEMotion
+} // namespace STEMotion
 
-#endif //PARAMETERSVIEW_H
+#endif // PARAMETERSVIEW_H

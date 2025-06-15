@@ -2,9 +2,9 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
+#include <LibSTEMotion/metrics/Velocity.h>
 #include <iostream>
 #include <ostream>
-#include <LibSTEMotion/metrics/Velocity.h>
 
 #include <utility>
 
@@ -14,9 +14,7 @@ namespace STEMotion {
         this->metric = metric;
     }
 
-    void Velocity::to_metric(Metric metric) {
-        this->metric = metric;
-    }
+    void Velocity::to_metric(Metric metric) { this->metric = metric; }
 
     f64 Velocity::display() const {
         switch (metric) {
@@ -59,4 +57,4 @@ namespace STEMotion {
                 return -1;
         }
     }
-} // STEMotion
+} // namespace STEMotion

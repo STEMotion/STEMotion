@@ -52,7 +52,7 @@ namespace STEMotion {
 
         ObjectKind kind;
     };
-};
+}; // namespace STEMotion
 
 
-#endif //OBJECT_H
+#endif // OBJECT_H

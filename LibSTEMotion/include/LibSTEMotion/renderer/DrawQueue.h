@@ -16,12 +16,10 @@ namespace STEMotion {
     public:
         DrawQueue() = default;
         void enqueue_command(Object command);
-        [[nodiscard]] size_t size() const {
-            return draw_queue.size();
-        }
+        [[nodiscard]] size_t size() const { return draw_queue.size(); }
         [[nodiscard]] Object pop_command();
         ~DrawQueue() = default;
     };
-}
+} // namespace STEMotion
 
-#endif //DRAWQUEUE_H
+#endif // DRAWQUEUE_H

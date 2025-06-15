@@ -11,16 +11,17 @@
 
 namespace STEMotion {
 
-class MainWindow final : public Gtk::Window {
-public:
-    explicit MainWindow(Gtk::Application &app);
-private:
-    Gtk::Application &app;
-    Gtk::Box box;
-    Gtk::Label name;
-    Gtk::Button launch_simulation;
-};
+    class MainWindow final : public Gtk::Window {
+    public:
+        explicit MainWindow(Gtk::Application &app);
 
-} // STEMotion
+    private:
+        Gtk::Application &app;
+        Gtk::Box box;
+        Gtk::Label name;
+        Gtk::Button launch_simulation;
+    };
 
-#endif //MAINWINDOW_H
+} // namespace STEMotion
+
+#endif // MAINWINDOW_H

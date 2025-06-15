@@ -13,19 +13,20 @@
 
 namespace STEMotion {
 
-class SimulationWindow final : public Gtk::Window {
-public:
-    explicit SimulationWindow(std::string simulation_plugin_path);
-    ~SimulationWindow() override;
-private:
-    SimulationPlugin *simulation_plugin;
-    SimulationView *simulation_view;
-    ParametersView *parameters_view;
-    PredictionsView predictions_view;
-    Gtk::Paned hpaned;
-    Gtk::Paned vpaned;
-};
+    class SimulationWindow final : public Gtk::Window {
+    public:
+        explicit SimulationWindow(std::string simulation_plugin_path);
+        ~SimulationWindow() override;
 
-} // STEMotion
+    private:
+        SimulationPlugin *simulation_plugin;
+        SimulationView *simulation_view;
+        ParametersView *parameters_view;
+        PredictionsView predictions_view;
+        Gtk::Paned hpaned;
+        Gtk::Paned vpaned;
+    };
 
-#endif //SIMULATIONWINDOW_H
+} // namespace STEMotion
+
+#endif // SIMULATIONWINDOW_H

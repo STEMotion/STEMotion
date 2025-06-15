@@ -11,28 +11,26 @@
 
 namespace STEMotion {
 
-class Force final : public BaseQuantity {
-    f64 force;
-    Metric metric;
+    class Force final : public BaseQuantity {
+        f64 force;
+        Metric metric;
 
-    const char *units[4] = { "N", "dyn", "lbf" , "Invalid Metric" };
-public:
-    Force(std::string name, f64 force, Metric metric);
-    void to_metric(Metric metric) override;
-    [[nodiscard]] f64 display() const override;
-    [[nodiscard]] const char* unit() const override {
-        return units[metric];
-    }
+        const char *units[4] = {"N", "dyn", "lbf", "Invalid Metric"};
 
-    [[nodiscard]] const char** get_units() override {
-        return units;
-    }
+    public:
+        Force(std::string name, f64 force, Metric metric);
+        void to_metric(Metric metric) override;
+        [[nodiscard]] f64 display() const override;
+        [[nodiscard]] const char *unit() const override { return units[metric]; }
 
-    [[nodiscard]] Metric from_unit_string(const char *unit) override;
-private:
-    static f64 to_mks(f64 force, Metric metric);
-};
+        [[nodiscard]] const char **get_units() override { return units; }
 
-} // STEMotion
+        [[nodiscard]] Metric from_unit_string(const char *unit) override;
 
-#endif //FORCE_H
+    private:
+        static f64 to_mks(f64 force, Metric metric);
+    };
+
+} // namespace STEMotion
+
+#endif // FORCE_H

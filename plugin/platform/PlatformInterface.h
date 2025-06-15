@@ -5,8 +5,8 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-typedef void* STEMotionPlugin;
+typedef void *STEMotionPlugin;
 
-STEMotionPlugin STEMotion_LoadPlugin(const char* path);
+STEMotionPlugin STEMotion_LoadPlugin(const char *path);
 
-#endif //INTERFACE_H
+#endif // INTERFACE_H

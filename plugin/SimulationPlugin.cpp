@@ -2,15 +2,15 @@
 // Created by mdgaziur001 on 3/31/25.
 //
 
-#include "platform/PlatformInterface.h"
 #include "SimulationPlugin.h"
+#include "platform/PlatformInterface.h"
 
 #include <glibmm/object.h>
 
 #include "LibSTEMotion/metrics/Distance.h"
-#include "LibSTEMotion/metrics/Mass.h"
 #include "LibSTEMotion/metrics/Energy.h"
 #include "LibSTEMotion/metrics/Force.h"
+#include "LibSTEMotion/metrics/Mass.h"
 #include "LibSTEMotion/metrics/Velocity.h"
 
 namespace STEMotion {
@@ -26,16 +26,14 @@ namespace STEMotion {
 
     SimulationResult SimulationPlugin::run(f64 deltaTime) {
         return {
-            .draw_queue = DrawQueue(),
-            .output = SimulationOutput(),
+                .draw_queue = DrawQueue(),
+                .output = SimulationOutput(),
         };
     }
 
-    SimulationParams& SimulationPlugin::get_params() {
-        return params;
-    }
+    SimulationParams &SimulationPlugin::get_params() { return params; }
 
     SimulationPlugin::~SimulationPlugin() {
         // TODO: call plugin's destructor
     }
-} // STEMotion
+} // namespace STEMotion

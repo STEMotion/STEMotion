@@ -11,9 +11,7 @@ namespace STEMotion {
         this->metric = metric;
     }
 
-    void Energy::to_metric(Metric metric) {
-        this->metric = metric;
-    }
+    void Energy::to_metric(Metric metric) { this->metric = metric; }
 
     Metric Energy::from_unit_string(const char *unit) {
         if (strcmp("J", unit) == 0) {
@@ -56,4 +54,4 @@ namespace STEMotion {
                 return -1;
         }
     }
-} // STEMotion
+} // namespace STEMotion

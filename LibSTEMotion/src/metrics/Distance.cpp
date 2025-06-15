@@ -12,9 +12,7 @@ namespace STEMotion {
         this->metric = metric;
     }
 
-    void Distance::to_metric(Metric metric) {
-        this->metric = metric;
-    }
+    void Distance::to_metric(Metric metric) { this->metric = metric; }
 
     f64 Distance::display() const {
         switch (metric) {
@@ -57,5 +55,4 @@ namespace STEMotion {
                 return -1;
         }
     }
-}
-
+} // namespace STEMotion

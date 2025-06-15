@@ -39,4 +39,4 @@ namespace STEMotion {
         delete parameters_view;
         delete simulation_plugin;
     }
-} // STEMotion
+} // namespace STEMotion

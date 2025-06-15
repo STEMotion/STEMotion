@@ -5,4 +5,4 @@
 #ifndef STEMOTION_H
 #define STEMOTION_H
 
-#endif //STEMOTION_H
+#endif // STEMOTION_H

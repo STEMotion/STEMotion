@@ -42,4 +42,4 @@ namespace STEMotion {
 
         return InvalidAngleUnit;
     }
-}
+} // namespace STEMotion
