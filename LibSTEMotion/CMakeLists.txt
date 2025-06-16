@@ -35,5 +35,5 @@ add_library(
     include/LibSTEMotion/metrics/Angle.h
     src/simulation/SimulationOutput.cpp
     include/LibSTEMotion/SimulationOutput.h
-        include/LibSTEMotion/renderer/objects/Object.h
+        include/LibSTEMotion/renderer/Object.h
 )

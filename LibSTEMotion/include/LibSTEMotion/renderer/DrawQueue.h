@@ -7,7 +7,7 @@
 
 #include <queue>
 
-#include "objects/Object.h"
+#include "Object.h"
 
 namespace STEMotion {
     class DrawQueue {
