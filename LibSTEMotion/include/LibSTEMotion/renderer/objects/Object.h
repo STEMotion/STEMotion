@@ -38,6 +38,7 @@ namespace STEMotion {
 
     struct Text {
         char text[256];
+        usize size;
     };
 
     struct Object {
