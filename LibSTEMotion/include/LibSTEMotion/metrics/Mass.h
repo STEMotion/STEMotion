@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 4/1/25.
 //
 
-#ifndef MASS_H
-#define MASS_H
+#pragma once
+
 #include "BaseQuantity.h"
 
 namespace STEMotion {
@@ -29,5 +29,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // MASS_H

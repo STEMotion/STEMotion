@@ -4,13 +4,17 @@
 
 #include "SimulationView.h"
 
+#include <iostream>
+
 #include "../../renderer/Renderer.h"
 
 namespace STEMotion {
     SimulationView::SimulationView(SimulationPlugin &simulation_plugin) : plugin(simulation_plugin) {
+        renderer = new Renderer();
         set_auto_render(false);
-        set_size_request(512, 615);
+        set_size_request(512, 512);
     }
+    SimulationView::~SimulationView() { delete renderer; }
 
     bool SimulationView::on_render(const Glib::RefPtr<Gdk::GLContext> &gl_context) {
         const auto time = get_frame_clock()->get_frame_time() / 1e6;
@@ -25,8 +29,8 @@ namespace STEMotion {
         lastTime = time;
 
         auto [draw_queue, simulation_output] = plugin.run(delta_time);
-        draw_queue.enqueue_command({.kind = ObjectKindCircle, .x0 = 0, .y0 = 0, .circle = {.radius = 5}});
-        render_draw_queue(draw_queue, time);
+        renderer->render_draw_queue(draw_queue, time, get_allocated_width(),
+                                    get_allocated_height());
 
         return true;
     }

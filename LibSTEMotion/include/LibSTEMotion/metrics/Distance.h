@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef DISTANCE_H
-#define DISTANCE_H
+#pragma once
+
 #include <string>
 
 #include "BaseQuantity.h"
@@ -34,6 +34,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-
-#endif // DISTANCE_H

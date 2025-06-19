@@ -2,8 +2,7 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef METRICS_H
-#define METRICS_H
+#pragma once
 
 /*
  * Metrics in STEMotion is represented internally as MKS.
@@ -17,5 +16,3 @@
 namespace STEMotion {
     enum Metric { MKS, CGS, FPS, InvalidMetric };
 }
-
-#endif // METRICS_H

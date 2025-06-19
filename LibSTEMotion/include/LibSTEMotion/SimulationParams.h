@@ -2,8 +2,7 @@
 // Created by mdgaziur001 on 3/31/25.
 //
 
-#ifndef SIMULATIONPARAMS_H
-#define SIMULATIONPARAMS_H
+#pragma once
 
 #include <memory>
 #include <unordered_map>
@@ -48,5 +47,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // SIMULATIONPARAMS_H

@@ -2,8 +2,7 @@
 // Created by mdgaziur001 on 3/31/25.
 //
 
-#ifndef SIMULATIONPLUGIN_H
-#define SIMULATIONPLUGIN_H
+#pragma once
 
 #include <string>
 
@@ -31,5 +30,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // SIMULATIONPLUGIN_H

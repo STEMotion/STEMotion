@@ -2,8 +2,10 @@
 // Created by mdgaziur001 on 3/28/25.
 //
 
-#ifndef NUMSIZE_H
-#define NUMSIZE_H
+#pragma once
+
+#include <cstdint>
+#include <cstddef>
 
 typedef int8_t i8;
 typedef uint8_t u8;
@@ -16,6 +18,10 @@ typedef uint64_t u64;
 typedef float f32;
 typedef double f64;
 typedef size_t usize;
-typedef ssize_t isize;
 
-#endif // NUMSIZE_H
+#ifdef _WIN32
+typedef long isize;
+#else
+#include <unistd.h>
+typedef ssize_t isize;
+#endif

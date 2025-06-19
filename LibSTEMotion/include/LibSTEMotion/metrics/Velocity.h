@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef VELOCITY_H
-#define VELOCITY_H
+#pragma once
+
 #include <string>
 
 #include "BaseQuantity.h"
@@ -31,5 +31,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // VELOCITY_H

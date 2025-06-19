@@ -9,6 +9,7 @@
 
 #include <LibSTEMotion/SimulationParams.h>
 #include "../../plugin/SimulationPlugin.h"
+#include "../../renderer/Renderer.h"
 
 namespace STEMotion {
 
@@ -17,8 +18,10 @@ namespace STEMotion {
         bool has_params_been_updated = false;
 
         explicit SimulationView(SimulationPlugin &simulation_plugin);
+        ~SimulationView();
 
     private:
+        Renderer *renderer;
         SimulationPlugin &plugin;
         f64 lastTime = 0;
 

@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef TIME_H
-#define TIME_H
+#pragma once
+
 #include <string>
 
 #include "../utils/numsize.h"
@@ -36,6 +36,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-
-#endif // TIME_H

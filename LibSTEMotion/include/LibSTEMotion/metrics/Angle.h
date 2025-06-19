@@ -2,8 +2,7 @@
 // Created by MD Gaziur Rahman Noor on 14/6/25.
 //
 
-#ifndef ANGLE_H
-#define ANGLE_H
+#pragma once
 
 #include <cmath>
 #include <cstring>
@@ -31,5 +30,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // ANGLE_H

@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef FORCE_H
-#define FORCE_H
+#pragma once
+
 #include <string>
 
 #include "BaseQuantity.h"
@@ -32,5 +32,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // FORCE_H

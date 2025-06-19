@@ -2,8 +2,7 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef BASEMETRIC_H
-#define BASEMETRIC_H
+#pragma once
 
 #include <string>
 #include <utility>
@@ -27,6 +26,3 @@ namespace STEMotion {
         [[nodiscard]] virtual Metric from_unit_string(const char *unit) = 0;
     };
 } // namespace STEMotion
-
-
-#endif // BASEMETRIC_H

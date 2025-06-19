@@ -2,8 +2,8 @@
 // Created by mdgaziur001 on 3/29/25.
 //
 
-#ifndef ENERGY_H
-#define ENERGY_H
+#pragma once
+
 #include <string>
 
 #include "BaseQuantity.h"
@@ -32,5 +32,3 @@ namespace STEMotion {
     };
 
 } // namespace STEMotion
-
-#endif // ENERGY_H

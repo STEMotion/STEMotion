@@ -2,8 +2,8 @@
 // Created by MD Gaziur Rahman Noor on 15/6/25.
 //
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#pragma once
+
 #include "LibSTEMotion/utils/numsize.h"
 
 
@@ -16,29 +16,36 @@ namespace STEMotion {
         ObjectKindText,
     };
 
+    enum TextStyle {
+        TextStyleRegular,
+        TextStyleItalic,
+        TextStyleBold,
+    };
+
     struct Circle {
-        f64 radius;
+        f32 radius;
     };
 
     struct Rectangle {
-        f64 height;
-        f64 width;
+        f32 height;
+        f32 width;
     };
 
     struct Line {
-        f64 x1, y1;
-        f64 x2, y2;
+        f32 x1, y1;
+        f32 x2, y2;
     };
 
     struct Triangle {
-        f64 x1, y1;
-        f64 x2, y2;
-        f64 x3, y3;
+        f32 x1, y1;
+        f32 x2, y2;
+        f32 x3, y3;
     };
 
     struct Text {
         char text[256];
-        usize size;
+        TextStyle style;
+        float size;
     };
 
     struct Object {
@@ -49,11 +56,9 @@ namespace STEMotion {
             Triangle triangle;
             Text text;
         };
-        f64 x0, y0;
+        f32 x0, y0;
 
         ObjectKind kind;
     };
 }; // namespace STEMotion
 
-
-#endif // OBJECT_H
