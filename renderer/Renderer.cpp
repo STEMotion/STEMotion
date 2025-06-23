@@ -76,8 +76,17 @@ namespace STEMotion {
                     draw_circle(draw_command.circle, *shader, draw_command.x0, draw_command.y0);
                     break;
                 case ObjectKindText:
-                    typeface_italic->render_text(*shader, draw_command.text.text, draw_command.x0, draw_command.y0,
-                                                 draw_command.text.size, glm::vec3(1.0f));
+                    switch (draw_command.text.style) {
+                        case TextStyleItalic:
+                            typeface_italic->render_text(*shader, draw_command.text.text, draw_command.x0,
+                                                         draw_command.y0, draw_command.text.size, glm::vec3(1.0f));
+                        case TextStyleRegular:
+                            typeface_regular->render_text(*shader, draw_command.text.text, draw_command.x0,
+                                                          draw_command.y0, draw_command.text.size, glm::vec3(1.0f));
+                        case TextStyleBold:
+                            typeface_italic->render_text(*shader, draw_command.text.text, draw_command.x0,
+                                                         draw_command.y0, draw_command.text.size, glm::vec3(1.0f));
+                    }
                     break;
             }
         }
