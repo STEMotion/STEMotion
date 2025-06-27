@@ -5,6 +5,7 @@
 #include <LibSTEMotion/metrics/Force.h>
 
 #include <utility>
+#include <cstring>
 
 namespace STEMotion {
     Force::Force(std::string name, f64 force, Metric metric) : BaseQuantity(std::move(name)) {

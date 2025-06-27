@@ -3,6 +3,7 @@
 //
 
 #include <LibSTEMotion/metrics/Time.h>
+#include <cstring>
 
 namespace STEMotion {
     Time::Time(f64 time, TimeUnit unit) {

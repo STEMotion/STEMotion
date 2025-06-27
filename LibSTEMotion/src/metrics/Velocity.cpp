@@ -7,6 +7,7 @@
 #include <ostream>
 
 #include <utility>
+#include <cstring>
 
 namespace STEMotion {
     Velocity::Velocity(std::string name, f64 velocity, Metric metric) : BaseQuantity(std::move(name)) {

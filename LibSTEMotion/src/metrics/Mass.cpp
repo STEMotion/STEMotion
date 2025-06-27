@@ -3,6 +3,7 @@
 //
 
 #include <LibSTEMotion/metrics/Mass.h>
+#include <cstring>
 
 namespace STEMotion {
     Mass::Mass(std::string name, f64 mass, Metric metric) : BaseQuantity(std::move(name)) {

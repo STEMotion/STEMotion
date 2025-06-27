@@ -4,6 +4,7 @@
 
 #include <LibSTEMotion/metrics/Energy.h>
 #include <utility>
+#include <cstring>
 
 namespace STEMotion {
     Energy::Energy(std::string name, f64 energy, Metric metric) : BaseQuantity(std::move(name)) {

@@ -5,6 +5,7 @@
 #include <LibSTEMotion/metrics/Distance.h>
 
 #include <utility>
+#include <cstring>
 
 namespace STEMotion {
     Distance::Distance(std::string name, f64 distance, Metric metric) : BaseQuantity(std::move(name)) {
